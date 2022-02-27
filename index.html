@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
     <title>sseung page</title>
 </head>
 <body>
+    <p class="top_btn" onclick="topClick()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"/></svg></p>
     <section class="main">
         <h1 class="hidden">로고</h1>
         <div class="logo">
@@ -45,35 +46,48 @@
         <p>
             2011 ~ 2020 <span>디자이너 8Y</span><br>
             2021 <span>웹퍼블리셔 학원 6M + 회사 6M</span><br>
-            2022 <span>wecode !</span>
+            2022 <span class="wecode">wecode !</span>
         </p>
-        <p class="port_btn"><a href="portfolio/index.html" target="_blank">portfolio</a></p>
+        <p class="port_btn" onclick="portBtn()">portfolio</p>
     </section>
     <section class="sub_whydev">
         <h3>왜 FE</h3>
-        <p>디자인전공으로 첫 사회생활부터 디자이너의길로 자연스레 밟게되었는데 어느순간 디자인 포지션이 애매해지고 정답이라생각한것이 아닐때가많아 다른길을 찾기시작. 
-
-            개발이나 디자인은 과정에서 생각을 많이 해야하는게 닮았지만,
-            디자인은 내가 정답일지 오류일지 모르기에 점점 길을 잃어가는 느낌이었다면, 개발은 직접적으로 오류를 뱉어내며 몇시간이고 붙잡고 있어도 그것을 해결하였을때의 희열과 정답이있기에 내가 발전하는 느낌이었다. 
-            
-            위코드를 알게되고 단기로 집중해서 배워서 빠르게 넘어가는게 나을것 같다 생각하여 퇴사하고 개발 준비 시작</p>
+        <p>
+            디자인전공으로 첫 사회생활부터 디자이너의길로 자연스레 밟게되었는데 어느순간 포지션이 애매해졌고 정답이라 생각한것이 아닐때가많아 다른길을 찾기시작했습니다.<br>
+            개발이나 디자인은 작업과정에서 생각을 많이 해야하는게 닮았다 생각하지만, 디자인은 내가 정답일지 오류일지 모르기에 점점 길을 잃어가는 느낌이었다면,
+            개발은 직접적으로 오류를 뱉어내며 몇시간이고 붙잡고 있어도 그것을 해결하였을때의 희열과 정답이있기에 내가 발전하는 느낌이 들어서 적극적으로 알아보게 되었고,            
+            위코드를 알게되고 단기로 집중해서 배워서 빠르게 넘어가는게 나을것 같다 생각하여 퇴사하고 개발 준비 시작
+        </p>
     </section>
     <section class="sub_like">
         <h1 class="hidden">i like</h1>
         <div class="mylike">
-            <p>I like...</p>
+            <p class="mylike_title">I like...</p>
             <ul>
                 <li>여행</li>
                 <li>냠냠</li>
                 <li>루비</li>
             </ul>
+            <p class="think">" 쉴땐 쉬고, 집중할 땐 집중하자 "</p>
         </div>
         <div class="img-wrapper">
+            <div class="roller">
+                    <img class="carousel_img" src="./img/mylike/mylike_1.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_2.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_3.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_4.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_5.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_6.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_7.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_8.jpeg" alt="mylike images" />
+                    <img class="carousel_img" src="./img/mylike/mylike_9.jpeg" alt="mylike images" />
+            </div>
         </div>
     </section>
     <footer>
-        2022 sseung page
+        2022<br>
+        sseung page
     </footer>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
