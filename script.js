@@ -2,12 +2,27 @@ const get = (target) => {
   return document.querySelector(target)
 }
 
-const imgNode = document.querySelectorAll('.carousel_img')
-const imgArray = Array.from(imgNode);
+let imgArray = [];
 const $roller = get('.roller');
+const $topbtn = get('.top_btn');
 
 
 let moveX = 0;
+const imgElement = () => {
+    const addElement = [];
+    const imgnum = 9;
+    let num = 0;
+    while(num<imgnum) {
+        num++;
+        addElement.push(`<img class="carousel_img" src="./img/mylike/mylike_${num}.jpeg" alt="mylike images" />`);
+    }
+    const joinArray = addElement.join().replace(/,/g , '');
+    $roller.innerHTML = joinArray;
+    const imgtags = document.querySelectorAll('.carousel_img');
+    imgArray = Array.from(imgtags);
+}
+imgElement();
+
 
 const moveleft = () => {
     const roll = () => {
@@ -15,7 +30,7 @@ const moveleft = () => {
         if(moveX <= width) {
             moveX++;
             $roller.style.left = -moveX + 'px';
-        } else if(moveX = width) {
+        } else if(moveX >= width) {
             const prevImg = imgArray.shift();
             imgArray.push(prevImg);
             $roller.innerHTML = '';
@@ -24,11 +39,10 @@ const moveleft = () => {
             })
             $roller.style.left = '0px';
             moveX = 0;
-            // console.log(moveX, $roller.style.left, imgArray[0]);
         }
     }
     
-    setInterval(roll, 1);
+    setInterval(roll, 10);
     
 }
 
@@ -47,40 +61,13 @@ portBtn = () => {
     alert('포트폴리오 정리중')
 }
 
+let opavalue = 0;
 
-
-// console.log(imgArray[0], $roller.style.left)
-
-/*
-const rollImg = () => {
-    const width = imgArray[0].offsetWidth;
-
-
-    roll = () => {
-        if (imgX == width) {
-            clearInterval(moveleft);
-        } else {
-            imgX++;
-            $roller.style.left = -imgX + 'px' ;
-        }
+window.addEventListener('scroll', () => {
+    if(window.scrollY >= 400) {
+        $topbtn.style.display = 'block';
+        $value = (window.scrollY - 400)/3
+        $value > 100 ? opavalue = 1 : opavalue = $value/100;
+        $topbtn.style.opacity = opavalue.toFixed(1);
     }
-    setInterval(roll,1);
-    rollImg();
-
-    
-    // setInterval(ani, 10);
-    // const thisLeft = $roller.style.left;
-    // $roller.style.transform = `translateX(${(thisLeft-firstWidth)}px)` ;
-    const prevImg = imgArray.shift();
-    imgArray.push(prevImg);
-    $roller.innerHTML = '';
-    imgArray.forEach((item) => {
-        $roller.appendChild(item)
-    })
-}
-
-rollImg();
-
-// const roll = setInterval(rollImg, 3000);
-
-*/
+})
